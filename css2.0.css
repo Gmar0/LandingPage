@@ -1,0 +1,230 @@
+/*  Basic Styling
+------------------------------------------------------- */
+* { box-sizing: border-box; }
+
+html {
+	font-family: Avenir, Helvetica, sans-serif;
+	background: #e4e4d5;
+}
+body { margin: 0; }
+
+header {
+	margin: 4rem;
+}
+h1 {
+	text-transform: uppercase;	
+	font-size: 4rem;
+    margin: 0;
+    line-height: 1.2em;
+}
+h2 {
+    color: #e4e4d5;
+    background: #f9423a;
+    justify-self: center; 
+    font-size: 4rem ;
+    margin-right: 4rem;    
+    padding-left: 7rem;
+}
+h3 {
+    margin-left: 10rem;
+    padding-left: 5vw;
+    background: azure;
+}
+/*.titulo{
+    font-size: 1rem;
+    margin-right: 3rem;
+    background: #f9423a;
+    padding-right: 2rem;
+}   
+  
+.subtitulo {
+    margin-left: 10rem;
+    padding-left: 5vw;
+    background: azure; 
+}*/
+
+.C h1 {
+	display: grid;
+	grid-template-columns: repeat(19, 1fr);
+}
+.C h1 span:nth-child(1) { /* v */
+	color: #f9423a;
+	grid-column: 6;
+	grid-row: 1;
+	text-align: center;
+
+}
+.C h1 span:nth-child(2) { /* i */
+	color: #f9423a;
+	grid-column: 6;
+	grid-row: 2;
+	text-align: center;
+
+}
+.C h1 span:nth-child(3) { /* A */
+	color: #f9423a;
+	grid-column: 6;
+	grid-row: 3;
+	text-align: center;
+
+}
+.C h1 span:nth-child(4) { /* j */
+	color: #f9423a;
+	grid-column: 6;
+	grid-row: 4;
+	text-align: center;
+
+}
+.C h1 span:nth-child(5) { /* e */
+	color: #f9423a;
+	grid-column: 6;
+	grid-row: 5;
+	text-align: center;
+
+}
+.C h1 span:nth-child(6) { /* s */
+	color: #f9423a;
+	grid-column: 6;
+	grid-row: 6;
+	text-align: center;
+
+}
+
+
+.C h1 span:nth-child(7) { /* Á */
+	grid-column: 5;
+	grid-row: 1;
+	text-align: end;
+
+}
+.C h1 span:nth-child(8) { /* ILA */
+	grid-column: 7;
+	grid-row: 1;	
+	text-align: initial;
+
+}
+.C h1 span:nth-child(9) { /* Valenc */
+	grid-column: 5;
+	grid-row: 2;
+	text-align: end;
+
+}
+.C h1 span:nth-child(10) {  /*A */
+	grid-column: 7;
+	grid-row: 2;
+	text-align: initial;
+
+}
+.C h1 span:nth-child(11) { /* SAL */
+	grid-column: 5;
+	grid-row: 3;
+	text-align: end;
+
+}
+.C h1 span:nth-child(12) { /*MANCA*/
+	grid-column: 7;
+	grid-row: 3;
+	text-align: initial;
+
+}
+.C h1 span:nth-child(13) {  /*BADA*/
+	grid-column: 5;
+	grid-row: 4;
+	text-align: end;
+
+}
+.C h1 span:nth-child(14) {  /*OZ*/
+	grid-column: 7;
+	grid-row: 4;
+	text-align: initial;
+
+}
+.C h1 span:nth-child(15) {  /*S*/
+	grid-column: 5;
+	grid-row: 5;
+	text-align: end;
+
+}
+.C h1 span:nth-child(16) {  /*VILLA*/
+	grid-column: 7;
+	grid-row: 5;
+	text-align: initial;
+
+}
+.C h1 span:nth-child(17) {  /*OUREN*/
+	grid-column: 5;
+	grid-row: 6;
+	text-align: end;
+
+}
+.C h1 span:nth-child(18) {  /*E*/
+	grid-column: 7;
+	grid-row: 6;
+	text-align: initial;
+
+}
+
+
+.slider { 
+	margin-left: -5rem;
+	width: 50%;	/*Ancho de la web que ocupa el slider*/
+	overflow: hidden;	/*Para que no se muestre parte de las imágenes contiguas*/
+	  }
+	  
+.slider ul {
+	display: flex;	/*Para que la disposición de las fotos sea en carrusel y no una sobre otra*/
+	padding: 0; /*distancia entre cada foto*/
+	width: 600%;	/*Hemos puesto este ancho porque hay 6 fotos, la última se corresponde con la 1ª para hacer simular el efecto de bucle infinito*/
+	animation: cambio 20s infinite ease;
+	animation-direction:normal;
+	  }
+	  
+.slider li {
+	width: 100%;
+	list-style: none;
+	  }	/*Para que cada imagen se ajuste y aparezca correctamente en el carrusel*/
+	  
+.slider img {
+	width: 100%;	/*Una imagen es el 100% de cada keyframe*/
+	  }
+	  
+	  @keyframes cambio {
+		  
+		  0% {
+			  margin-left: 0%;	/*Comienza la primera imagen en la posición 0*/
+		  }
+		  14% {
+			  margin-left: 0%;	/*Del 15 al 18 se mueve 100 a la izq*/
+		  }
+		  19% {	
+			  margin-left: -100%;	/*Del 19% al 34% de la duración del slider completo, el 2º keyframe está estático */
+		  }
+		  34% {
+			  margin-left: -100%;	/*Del 35 al 38 se mueven los keyframes 200 a la izq*/
+		  }
+		  39% {
+			  margin-left: -200%;
+		  }						/*Quieta*/
+		  54% {
+			  margin-left: -200%;
+		  }						/*Se mueve -300 (hacia la izq)*/
+		  59% {
+			  margin-left: -300%;
+		  }						/*Quieta*/
+		  74% {
+			  margin-left: -300%;
+		  }						/*Se mueve -400*/
+		  79% {
+			  margin-left: -400%;
+		  }						/*Quieta*/
+		  94% {
+			  margin-left: -400%;
+		  }						/*Se mueve -500*/
+		  99% {
+			  margin-left: -500%;
+		  }						/*Quieta*/
+		  100% {
+			  margin-left: -500%;
+		  }
+	  }
+  
