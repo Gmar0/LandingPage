@@ -239,7 +239,7 @@ h1 span:nth-child(18) {  /*E*/
 
 .slider { 
 	margin-left: -5rem;
-	width: 50%;	/*Ancho de la web que ocupa el slider*/
+	width: 100%;	/*Ancho de la web que ocupa el slider*/
 	overflow: hidden;	/*Para que no se muestre parte de las imágenes contiguas*/
 	  }
 	  
