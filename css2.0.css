@@ -11,14 +11,11 @@ html {
 body { margin: 0; }
 
 header {
-	margin: 4rem;
+	margin-top: 4rem;
     grid-area: my-header;
 }
 
-/*nav {
-    grid-area: my-nav;
-    background-color: cornflowerblue;
-}*/
+
 
 aside {
     grid-area: my-aside;
