@@ -8,93 +8,42 @@ html {
 	scroll-behavior: smooth;
 
 }
-body { margin: 0; }
+body { 
+	margin: 0; 
+	width: 100%;
+}
 
 header {
 	margin-top: 4rem;
+	margin-right: 4rem;
+	margin-left: 4rem;
     grid-area: my-header;
 }
 
-
-
-aside {
-    grid-area: my-aside;
-}
-footer {
-    grid-area: my-footer;
-}
-
-h1 {
-	text-transform: uppercase;	
-	font-size: 4rem;
-    margin: 0;
-    line-height: 1.2em;
-	display: grid;
-	grid-template-columns: repeat(19, 1fr);
-}
-h2 {
-    color: #e4e4d5;
-    background: #f9423a;
-    justify-self: center; 
-    font-size: 4rem ;
-    margin-right: 10%;    
-    padding-left: 10%;
-}
-h3 {
-    margin-left: 10%;
-	margin-right: 10%;
-    padding-left: 5vw;
-    background: azure;
-}
-p {
-    display: flex;
-    margin-inline-start: 10%;
-    margin-inline-end: 10%;
-}
-a {
-	text-decoration: none;
-	color:black;
-}
-.logo {
+nav {
+    grid-area: my-nav;
+    background: rgb(0, 0, 0);
 	position: fixed;
-	margin-top: -4rem;
+	margin-top: -10%;
+	width: 100%;
+	height: 6.5rem;
+	padding: 0;
 }
-.viajes {
-	color: #f9423a;
-}
-.avv {
-    grid-area: my-section1;
-}
-.val {
-	grid-area: my-section2;
-}
-.sal {
-    grid-area: my-section3;
-}
-.bad {
-	grid-area: my-section4;
-}
-.sev {
-    grid-area: my-section5;
-}
-.our {
-	grid-area: my-section6;
-}
+
 main {
-    /*color: white;
-    margin: 0 auto;
+    /*margin: 0;
     max-width: 100%;
-    min-height: 100vh;
-    display: grid;*/
+    min-height: 100vh;*/
     display: grid;
-	grid-template-columns: 70% 30%;
+	grid-template-columns: 100%;
     /*grid-template-rows: 4em 2em 1fr 4em 2em;
     
     /* TIPO DE DISEÑO: MOBILE FIRST */
     /* como  inicialmente se construye la web es en una columna */
     /* Tal y como se espera en una visualización de dispositivo mobil */
     grid-template-areas:  
-    "my-section1"
+    "my-nav"
+	"my-section1"
     "my-section2" 
 	"my-section3" 
     "my-section4" 
@@ -104,6 +53,97 @@ main {
     "my-footer" ;
 }
 
+.logo {
+	position: sticky;
+	margin-top: 1rem;
+	margin-left: 46%;
+	filter: invert(100%);
+}
+
+aside {
+    grid-area: my-aside;
+}
+
+footer {
+    grid-area: my-footer;
+	background:rgb(26, 26, 26);
+	color: rgb(235, 232, 232);
+	padding-right: 5rem;
+	padding-left: 5rem;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+
+
+}
+
+h1 {
+	text-transform: uppercase;	
+	font-size: 4rem;
+    margin-top: 10%;
+    line-height: 1.2em;
+	display: grid;
+	grid-template-columns: repeat(19, 1fr);
+}
+
+h2 {
+    color: #e4e4d5;
+    background: #f9423a;
+    justify-self: center; 
+    font-size: 4rem ;
+    margin-right: 10%;    
+    padding-left: 10%;
+}
+
+h3 {
+    margin-left: 10%;
+	margin-right: 10%;
+    padding-left: 5vw;
+    background: azure;
+}
+
+p {
+    display: flex;
+    margin-inline-start: 10%;
+    margin-inline-end: 10%;
+}
+
+a {
+	text-decoration: none;
+	color:black;
+}
+
+.viajes {
+	color: #f9423a;
+}
+
+.menu:hover {
+	color: #f9423a;
+}
+
+.avv {
+    grid-area: my-section1;
+}
+
+.val {
+	grid-area: my-section2;
+}
+
+.sal {
+    grid-area: my-section3;
+}
+
+.bad {
+	grid-area: my-section4;
+}
+
+.sev {
+    grid-area: my-section5;
+}
+
+.our {
+	grid-area: my-section6;
+}
+
 h1 span:nth-child(1) { /* v */
 	color: #f9423a;
 	grid-column: 10;
@@ -111,10 +151,12 @@ h1 span:nth-child(1) { /* v */
 	text-align: center;
 
 }
+
 h1 span:nth-child(2) { /* i */
 	color: #f9423a;
 	grid-column: 10;
 	grid-row: 2;
+
 	text-align: center;
 
 }
@@ -281,22 +323,45 @@ h1 span:nth-child(18) {  /*E*/
 			  margin-left: -500%;
 		  }
 	  }
+
+@media  (max-width: 599px) {
+		main {
+			grid-template-columns: 100% ;
+			grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 5% 5%;
+			grid-template-areas: 
+			"my-section1" 
+			"my-section2" 
+			"my-section3"
+			"my-section4" 
+			"my-section5" 
+			"my-section6" 
+			"my-aside"
+			"my-footer";
+			margin-right: -60%;
+		}
+	}
+
 @media (min-width: 600px) and (max-width: 1000px) {
     main {
-        grid-template-columns: 2fr 1fr ;
-        grid-template-rows: 4em 2em 1fr 4em;
+        grid-template-columns: 60% 40%;
+        grid-template-rows: repeat(5, 1fr);
         grid-template-areas: 
         "my-section1 my-aside" 
-        "my-section2 my-aside" 
-        "my-section3 my-aside" 
+        "my-section2 my-aside"        
+		"my-section3 my-aside" 
+		"my-section4 my-aside"
+		"my-section5 my-aside" 
+		"my-section6 my-aside" 
         "my-footer my-footer";
+
     }
+	
 }
 
 @media (min-width: 1001px) {
     main {
         grid-template-columns: 70% 30%;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: repeat(5, 1fr);
         grid-template-areas: 
         "my-section1 my-aside" 
         "my-section2 my-aside"        
@@ -307,3 +372,4 @@ h1 span:nth-child(18) {  /*E*/
         "my-footer my-footer";
     }
 }
+
