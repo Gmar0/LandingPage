@@ -60,20 +60,29 @@ main {
 	filter: invert(100%);
 }
 
+.logoD {
+	grid-area: imglogo;
+	filter: invert(100%);
+	margin-left: -1rem;
+}
+
 aside {
     grid-area: my-aside;
+	width: 100%;
 }
 
 footer {
     grid-area: my-footer;
+	display: grid;
+	grid-template-columns: 30% 70%;
+	grid-template-areas: 
+	"imglogo opciones";
 	background:rgb(26, 26, 26);
 	color: rgb(235, 232, 232);
 	padding-right: 5rem;
 	padding-left: 5rem;
 	padding-top: 2rem;
 	padding-bottom: 2rem;
-
-
 }
 
 h1 {
@@ -142,6 +151,14 @@ a {
 
 .our {
 	grid-area: my-section6;
+}
+
+.opciones {
+	grid-area: opciones;
+	display: flex;
+	list-style: none;	
+	font-size: 25px;
+	cursor: pointer;
 }
 
 h1 span:nth-child(1) { /* v */
@@ -267,6 +284,10 @@ h1 span:nth-child(18) {  /*E*/
 	overflow: hidden;	
 	  }
 	  
+li {
+	list-style: none;
+}
+
 .slider ul {
 	display: flex;	
 	padding: 0; 
@@ -327,7 +348,7 @@ h1 span:nth-child(18) {  /*E*/
 @media  (max-width: 599px) {
 		main {
 			grid-template-columns: 100% ;
-			grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 5% 5%;
+			grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 12% 5%;
 			grid-template-areas: 
 			"my-section1" 
 			"my-section2" 
@@ -338,6 +359,12 @@ h1 span:nth-child(18) {  /*E*/
 			"my-aside"
 			"my-footer";
 			margin-right: -60%;
+		}
+		header {
+			margin-top: 30%;
+		}
+		nav {
+			margin-top: -20%;
 		}
 	}
 
@@ -353,9 +380,13 @@ h1 span:nth-child(18) {  /*E*/
 		"my-section5 my-aside" 
 		"my-section6 my-aside" 
         "my-footer my-footer";
-
     }
-	
+	header {
+		margin-top: 15%;
+	}
+	nav {
+		margin-top: -15%;
+	}
 }
 
 @media (min-width: 1001px) {
